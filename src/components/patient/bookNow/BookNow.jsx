@@ -15,7 +15,7 @@ const BookNow = ({ date, id, email }) => {
 
     const getDoctorsDetails = async () => {
         try {
-            const dataset = await axios.get(`https://doctor-appointment-24yh.onrender.com/getdoctoravailability`, { params: { id: id } });
+            const dataset = await axios.get(`https://kritaahospital.netlify.apprender.com/getdoctoravailability`, { params: { id: id } });
             setAvailability(dataset.data);
         } catch (error) {
             alert("Error fetching doctor details");
@@ -24,7 +24,7 @@ const BookNow = ({ date, id, email }) => {
 
     const getAlreadyBookedData = async () => {
         try {
-            const dataset = await axios.get(`https://doctor-appointment-24yh.onrender.com/getalreadybookedslots`, { params: { id: id } });
+            const dataset = await axios.get(`https://kritaahospital.netlify.apprender.com/getalreadybookedslots`, { params: { id: id } });
             console.log(dataset);
             setAlreadyBookedSlots(dataset.data.data);
         } catch (error) {
@@ -74,7 +74,7 @@ const BookNow = ({ date, id, email }) => {
         //console.log(bookingData);
         try {
             const token = localStorage.getItem('authToken');
-            await axios.post(`https://doctor-appointment-24yh.onrender.com/submitbookings`, bookingData, { headers: { 'Authorization': `${token}` } });
+            await axios.post(`https://kritaahospital.netlify.apprender.com/submitbookings`, bookingData, { headers: { 'Authorization': `${token}` } });
             alert('slot booked');
         } catch (error) {
             alert(error);

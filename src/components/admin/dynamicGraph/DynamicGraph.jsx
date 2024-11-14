@@ -13,7 +13,7 @@ const DynamicGraph = () => {
     const doctorAndPatientCount = async () => {
         const token = localStorage.getItem('authToken');
         try {
-            const response = await axios.get(`https://doctor-appointment-24yh.onrender.com/getTotalPatientByDoctor`, { headers: { 'Authorization': `${token}` } });
+            const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getTotalPatientByDoctor`, { headers: { 'Authorization': `${token}` } });
             //console.log(response.data);
             const doctorNames = response.data.map(item => item.doctorDetails.name);
             const patientCounts = response.data.map(item => item.uniquePatientCount);
@@ -38,7 +38,7 @@ const DynamicGraph = () => {
     const dateAndPatientCount = async () => {
         const token = localStorage.getItem('authToken');
         try {
-            const response = await axios.get(`https://doctor-appointment-24yh.onrender.com/getTotalPAtientByDate`, { headers: { 'Authorization': `${token}` } });
+            const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getTotalPAtientByDate`, { headers: { 'Authorization': `${token}` } });
             const pieData = response.data;
             const dates = Object.keys(pieData);
             const patientCounts = dates.map(date => pieData[date].totalPatients);

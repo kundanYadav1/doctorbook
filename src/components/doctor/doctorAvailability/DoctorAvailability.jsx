@@ -36,7 +36,7 @@ const DoctorAvailability = () => {
   const submitData = async(e)=> {
     try {
       const token = localStorage.getItem('authToken')
-      const response = await axios.post("https://doctor-appointment-24yh.onrender.com/submitdoctoravailability",availabilityData,{headers: {'Authorization': `${token}`}});
+      const response = await axios.post("https://kritaahospital.netlify.apprender.com/submitdoctoravailability",availabilityData,{headers: {'Authorization': `${token}`}});
       alert("submission successful");
     } catch (error) {
       alert(error);

@@ -9,7 +9,7 @@ const BookingNotifications = () => {
     const getRequests = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get(`https://doctor-appointment-24yh.onrender.com/getCurrentBookings`, {
+            const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getCurrentBookings`, {
                 headers: {
                     'Authorization': `${token}`
                 }

@@ -9,7 +9,7 @@ const PatientDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem('authToken');
-            const details = await axios.get(`https://doctor-appointment-24yh.onrender.com/getuserdetails`, { headers: { 'Authorization': `${token}` } });
+            const details = await axios.get(`https://kritaahospital.netlify.apprender.com/getuserdetails`, { headers: { 'Authorization': `${token}` } });
             // console.log(details.data.userData);
             // console.log(id);
             setPatientDetails(details.data.userData);
@@ -22,7 +22,7 @@ const PatientDetails = () => {
     }, [])
     return (
         <div className='patientdetails'>
-            <div className='patientimage'><img className='patientprofileimage' src={`https://doctor-appointment-24yh.onrender.com/` + patientDetails.profile_image} alt='patient'></img></div>
+            <div className='patientimage'><img className='patientprofileimage' src={`https://kritaahospital.netlify.apprender.com/` + patientDetails.profile_image} alt='patient'></img></div>
             <div className='patientdata'>
                 <div className='patientdataleft'>
                     <div className='patientlabel'><p className='patientlabelp'><strong>Name: </strong>{patientDetails.name}</p> </div>

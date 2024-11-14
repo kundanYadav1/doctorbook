@@ -9,7 +9,7 @@ const AdminDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem('authToken');
-            const details = await axios.get(`https://doctor-appointment-24yh.onrender.com/getuserdetails`,{headers: {'Authorization': `${token}`}});
+            const details = await axios.get(`https://kritaahospital.netlify.app/getuserdetails`,{headers: {'Authorization': `${token}`}});
             //console.log(details.data.userData);
             console.log(details);
             setAdminDetails(details.data.userData);
@@ -23,7 +23,7 @@ const AdminDetails = () => {
     }, [])
     return (
         <div className='admindetails'>
-            <div className='adminimage'><img className='adminprofileimage' src={`https://doctor-appointment-24yh.onrender.com/` + adminDetails.profile_image} alt='admin'></img></div>
+            <div className='adminimage'><img className='adminprofileimage' src={`https://kritaahospital.netlify.app/` + adminDetails.profile_image} alt='admin'></img></div>
             <div className='admindata'>
                 <div className='admindataleft'>
                     <div className='adminlabel'><p className='adminlabelp'><strong>Name: </strong>{adminDetails.name}</p> </div>

@@ -24,7 +24,7 @@ const EditAdminDetails = () => {
     const getUserData = async () => {
         try {
             const token = localStorage.getItem("authToken");
-            const response = await axios.get('https://doctor-appointment-24yh.onrender.com/getuserdetails', {
+            const response = await axios.get('https://kritaahospital.netlify.apprender.com/getuserdetails', {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -54,7 +54,7 @@ const EditAdminDetails = () => {
                 profileData.append(key, adminDetails[key]);
             }
             const token = localStorage.getItem('authToken');
-            await axios.patch('https://doctor-appointment-24yh.onrender.com/updateuserdetails', profileData, {
+            await axios.patch('https://kritaahospital.netlify.apprender.com/updateuserdetails', profileData, {
                 headers: {
                     'Authorization': `${token}`,
                     'Content-Type': 'multipart/form-data'
@@ -73,7 +73,7 @@ const EditAdminDetails = () => {
                     <img
                         className='editadminprofileimage'
                         src={typeof adminDetails.profile_image === 'string'
-                            ? `https://doctor-appointment-24yh.onrender.com/${adminDetails.profile_image}`
+                            ? `https://kritaahospital.netlify.apprender.com/${adminDetails.profile_image}`
                             : URL.createObjectURL(adminDetails.profile_image)}
                         alt='admin'
                     />
@@ -145,7 +145,7 @@ export default EditAdminDetails;
 //     const getUserData = async (e) => {
 //         try {
 //             const token = localStorage.getItem("authToken")
-//             const details = await axios.get(`https://doctor-appointment-24yh.onrender.com/getuserdetails`, {
+//             const details = await axios.get(`https://kritaahospital.netlify.apprender.com/getuserdetails`, {
 //                 headers: {
 //                     'Authorization': `${token}`
 //                 }
@@ -177,7 +177,7 @@ export default EditAdminDetails;
 //                 profileData.append(key, adminDetails[key]);
 //             }
 //             const token = localStorage.getItem('authToken');
-//             const response = await axios.patch(`https://doctor-appointment-24yh.onrender.com/updateuserdetails`, profileData, {
+//             const response = await axios.patch(`https://kritaahospital.netlify.apprender.com/updateuserdetails`, profileData, {
 //                 headers: {
 //                     'Authorization': `${token}`
 //                 }
@@ -191,7 +191,7 @@ export default EditAdminDetails;
 
 //     return (
 //         <div className='editadmindetails'>
-//             <div className='editadminimage'><img className='editadminprofileimage' src={`https://doctor-appointment-24yh.onrender.com/` + adminDetails.profile_image} alt='admin'></img></div>
+//             <div className='editadminimage'><img className='editadminprofileimage' src={`https://kritaahospital.netlify.apprender.com/` + adminDetails.profile_image} alt='admin'></img></div>
 //             <input className='adminlabelinputprofile' type="file" accept=".jpg, .jpeg, .png" onChange={onChangeImage} />
 //             <div className='editadmindata'>
 //                 <div className='editadmindataleft'>

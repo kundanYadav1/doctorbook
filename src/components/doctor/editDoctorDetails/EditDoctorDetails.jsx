@@ -15,7 +15,7 @@ const EditDoctorDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem("authToken")
-            const details = await axios.get(`https://doctor-appointment-24yh.onrender.com/getuserdetails`, {
+            const details = await axios.get(`https://kritaahospital.netlify.apprender.com/getuserdetails`, {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -45,7 +45,7 @@ const EditDoctorDetails = () => {
                 profileData.append(key, doctorDetails[key]);
             }
             const token = localStorage.getItem('authToken');
-            const response = await axios.patch(`https://doctor-appointment-24yh.onrender.com/updateuserdetails`, profileData, {
+            const response = await axios.patch(`https://kritaahospital.netlify.apprender.com/updateuserdetails`, profileData, {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -59,7 +59,7 @@ const EditDoctorDetails = () => {
 
     return (
         <div className='editdoctordetails'>
-            <div className='editdoctorimage'><img className='editdoctorprofileimage' src={`https://doctor-appointment-24yh.onrender.com/`+doctorDetails.profile_image} alt='doctor'></img></div>
+            <div className='editdoctorimage'><img className='editdoctorprofileimage' src={`https://kritaahospital.netlify.apprender.com/`+doctorDetails.profile_image} alt='doctor'></img></div>
             <input className='doctorlabelinputprofile' type="file" accept=".jpg, .jpeg, .png" onChange={onChangeImage} />
             <div className='editdoctordata'>
                 <div className='editdoctordataleft'>

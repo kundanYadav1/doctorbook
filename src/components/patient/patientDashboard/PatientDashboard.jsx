@@ -9,7 +9,7 @@ const PatientDashboard = () => {
 
   const getdoctors = async () => {
     try {
-      const dataset = await axios.get("https://doctor-appointment-24yh.onrender.com/getapproveddoctors");
+      const dataset = await axios.get("https://kritaahospital.netlify.apprender.com/getapproveddoctors");
       setDoctorDetails(dataset.data);
     } catch (error) {
       alert(error)
@@ -33,7 +33,7 @@ const PatientDashboard = () => {
         doctorDetails.map((item, index) => (
           <div key={index}>
             <div className='itemclass'>
-              <img className='patientdashboardimage' src={`https://doctor-appointment-24yh.onrender.com/` + item.profile_image} alt={item.name}></img>
+              <img className='patientdashboardimage' src={`https://kritaahospital.netlify.apprender.com/` + item.profile_image} alt={item.name}></img>
               <div className='detailscss'>
                 <div><h4>{item.name}</h4></div>
                 <div><p>{item.specialization}</p></div>

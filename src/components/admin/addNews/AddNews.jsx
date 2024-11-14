@@ -9,7 +9,7 @@ const AddNews = () => {
 
   const submitNews = ()=> {
     const token = localStorage.getItem('authToken');
-    axios.post("https://doctor-appointment-24yh.onrender.com/newsentry",newsData, {
+    axios.post("https://kritaahospital.netlify.app/newsentry",newsData, {
       headers: {
         'Authorization': `${token}`
       }

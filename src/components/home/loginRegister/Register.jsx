@@ -29,7 +29,7 @@ const Register = () => {
     }, [countdown]);
 
     const requestOtp = async (e) => {
-        axios.post("https://doctor-appointment-24yh.onrender.com/sendotp", { email: registrationData.email })
+        axios.post("https://kritaahospital.netlify.apprender.com/sendotp", { email: registrationData.email })
             .then((response) => {
                 setOtpFlag(true);
                 setCountdown(60); 
@@ -47,7 +47,7 @@ const Register = () => {
     };
 
     const submitData = async (e) => {
-        axios.post("https://doctor-appointment-24yh.onrender.com/register", registrationData)
+        axios.post("https://kritaahospital.netlify.apprender.com/register", registrationData)
             .then((response) => {
                 navigate('/login');
             })

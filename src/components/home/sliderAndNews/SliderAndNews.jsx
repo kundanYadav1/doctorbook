@@ -11,7 +11,7 @@ const SliderAndNews = ({ slides }) => {
     useEffect(() => {
         const fetchNewsData = async () => {
             try {
-                const response = await axios.get("https://doctor-appointment-24yh.onrender.com/latestnews");
+                const response = await axios.get("https://kritaahospital.netlify.apprender.com/latestnews");
                 setNewsData(response.data.latestnewsdata);
             } catch (error) {
                 console.error('Error fetching news data:', error);
