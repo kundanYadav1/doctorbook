@@ -9,7 +9,7 @@ const AddNews = () => {
 
   const submitNews = ()=> {
     const token = localStorage.getItem('authToken');
-    axios.post("https://kritaahospital.netlify.app/newsentry",newsData, {
+    axios.post("https://doctorapp-backend-gilt.vercel.app/newsentry",newsData, {
       headers: {
         'Authorization': `${token}`
       }
