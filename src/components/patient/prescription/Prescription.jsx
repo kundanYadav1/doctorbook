@@ -12,7 +12,7 @@ const Prescription = () => {
     const fetchData = async () => {
         const token = localStorage.getItem('authToken');
         try {
-            const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getAllBookings`, {
+            const response = await axios.get(`https://doctorapp-backend-gilt.vercel.app/`, {
                 headers: { 'Authorization': `${token}` }
             });
             console.log(response.data);
