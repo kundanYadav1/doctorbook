@@ -9,7 +9,7 @@ const DoctorDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem('authToken');
-            const details = await axios.get(`https://kritaahospital.netlify.apprender.com/getuserdetails`,{headers: {'Authorization': `${token}`}});
+            const details = await axios.get(`https://doctorapp-backend-gilt.vercel.app/getuserdetails`,{headers: {'Authorization': `${token}`}});
             console.log("hello")
             console.log(details.data.userData);
             // console.log(id);
@@ -23,7 +23,7 @@ const DoctorDetails = () => {
     }, [])
     return (
         <div className='doctordetails'>
-            <div className='doctorimage'><img className='doctorprofileimage' src={`https://kritaahospital.netlify.apprender.com/`+doctorDetails.profile_image} alt='doctor'></img></div>
+            <div className='doctorimage'><img className='doctorprofileimage' src={`https://doctorapp-backend-gilt.vercel.app/`+doctorDetails.profile_image} alt='doctor'></img></div>
             <div className='doctordata'>
                 <div className='doctordataleft'>
                     <div className='doctorlabel'><p className='doctorlabelp'><strong>Name: </strong>{doctorDetails.name}</p> </div>
