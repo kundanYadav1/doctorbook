@@ -24,7 +24,7 @@ const EditAdminDetails = () => {
     const getUserData = async () => {
         try {
             const token = localStorage.getItem("authToken");
-            const response = await axios.get('https://kritaahospital.netlify.apprender.com/getuserdetails', {
+            const response = await axios.get('https://doctorapp-backend-gilt.vercel.app/getuserdetails', {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -54,7 +54,7 @@ const EditAdminDetails = () => {
                 profileData.append(key, adminDetails[key]);
             }
             const token = localStorage.getItem('authToken');
-            await axios.patch('https://kritaahospital.netlify.apprender.com/updateuserdetails', profileData, {
+            await axios.patch('https://doctorapp-backend-gilt.vercel.app/updateuserdetails', profileData, {
                 headers: {
                     'Authorization': `${token}`,
                     'Content-Type': 'multipart/form-data'
@@ -73,7 +73,7 @@ const EditAdminDetails = () => {
                     <img
                         className='editadminprofileimage'
                         src={typeof adminDetails.profile_image === 'string'
-                            ? `https://kritaahospital.netlify.apprender.com/${adminDetails.profile_image}`
+                            ? `https://doctorapp-backend-gilt.vercel.app/${adminDetails.profile_image}`
                             : URL.createObjectURL(adminDetails.profile_image)}
                         alt='admin'
                     />
