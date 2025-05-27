@@ -9,7 +9,7 @@ const AdminNotifications = () => {
     const getRequests = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get(`https://kritaahospital.netlify.app/getApprovalRequestList`, {
+            const response = await axios.get(`https://doctorapp-backend-gilt.vercel.app/getApprovalRequestList`, {
                 headers: {
                     'Authorization': `${token}`
                 }
