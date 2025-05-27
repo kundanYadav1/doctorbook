@@ -29,7 +29,7 @@ const Login = () => {
       return;
     }
     setOtpFlag(true);
-    axios.post("https://kritaahospital.netlify.apprender.com/sendotp", { email: registrationData.email })
+    axios.post("https://doctorapp-backend-gilt.vercel.app/sendotp", { email: registrationData.email })
       .then((response) => {
         setOtpFlag(true);
         setCountdown(60); // 1 minute countdown
@@ -51,7 +51,7 @@ const Login = () => {
       alert('Email and password are required');
       return;
     }
-    axios.post("https://kritaahospital.netlify.apprender.com/login", registrationData).
+    axios.post("https://doctorapp-backend-gilt.vercel.app/login", registrationData).
       then(response => {
         localStorage.setItem("authToken", response.data.authToken);
         localStorage.setItem("userid", response.data.userData._id);
@@ -80,7 +80,7 @@ const Login = () => {
       alert('Email is required');
       return;
     }
-    axios.post("https://kritaahospital.netlify.apprender.com/verifyOtp", registrationData)
+    axios.post("https://doctorapp-backend-gilt.vercel.app/verifyOtp", registrationData)
       .then((response) => {
         if (response.data.userData.role === "admin") {
           navigate(`/admin/admindetails`);
