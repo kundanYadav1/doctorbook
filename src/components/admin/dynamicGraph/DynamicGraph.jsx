@@ -38,7 +38,7 @@ const DynamicGraph = () => {
     const dateAndPatientCount = async () => {
         const token = localStorage.getItem('authToken');
         try {
-            const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getTotalPAtientByDate`, { headers: { 'Authorization': `${token}` } });
+            const response = await axios.get(`https://doctorapp-backend-gilt.vercel.app/getTotalPAtientByDate`, { headers: { 'Authorization': `${token}` } });
             const pieData = response.data;
             const dates = Object.keys(pieData);
             const patientCounts = dates.map(date => pieData[date].totalPatients);
