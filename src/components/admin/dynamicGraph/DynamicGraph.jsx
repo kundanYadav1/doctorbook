@@ -13,7 +13,7 @@ const DynamicGraph = () => {
     const doctorAndPatientCount = async () => {
         const token = localStorage.getItem('authToken');
         try {
-            const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getTotalPatientByDoctor`, { headers: { 'Authorization': `${token}` } });
+            const response = await axios.get(`https://doctorapp-backend-gilt.vercel.app/getTotalPatientByDoctor`, { headers: { 'Authorization': `${token}` } });
             //console.log(response.data);
             const doctorNames = response.data.map(item => item.doctorDetails.name);
             const patientCounts = response.data.map(item => item.uniquePatientCount);
