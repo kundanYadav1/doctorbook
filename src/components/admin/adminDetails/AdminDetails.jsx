@@ -23,7 +23,7 @@ const AdminDetails = () => {
     }, [])
     return (
         <div className='admindetails'>
-            <div className='adminimage'><img className='adminprofileimage' src={`https://kritaahospital.netlify.app/` + adminDetails.profile_image} alt='admin'></img></div>
+            <div className='adminimage'><img className='adminprofileimage' src={`https://doctorapp-backend-gilt.vercel.app/` + adminDetails.profile_image} alt='admin'></img></div>
             <div className='admindata'>
                 <div className='admindataleft'>
                     <div className='adminlabel'><p className='adminlabelp'><strong>Name: </strong>{adminDetails.name}</p> </div>
