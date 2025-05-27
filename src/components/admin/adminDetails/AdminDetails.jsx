@@ -9,7 +9,7 @@ const AdminDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem('authToken');
-            const details = await axios.get(`https://kritaahospital.netlify.app/getuserdetails`,{headers: {'Authorization': `${token}`}});
+            const details = await axios.get(`https://doctorapp-backend-gilt.vercel.app/getuserdetails`,{headers: {'Authorization': `${token}`}});
             //console.log(details.data.userData);
             console.log(details);
             setAdminDetails(details.data.userData);
