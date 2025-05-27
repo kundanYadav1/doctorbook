@@ -29,7 +29,7 @@ const ForgotPassword = () => {
             return;
         }
         setOtpFlag(true);
-        axios.post("https://kritaahospital.netlify.apprender.com/sendOtppassword", { email: forgotPasswordData.email })
+        axios.post("https://doctorapp-backend-gilt.vercel.app/sendOtppassword", { email: forgotPasswordData.email })
             .then((response) => {
                 //setOtpFlag(true);
                 setCountdown(60); // 1 minute countdown
@@ -52,7 +52,7 @@ const ForgotPassword = () => {
             alert('password not matching');
             return;
         }
-        axios.post("https://kritaahospital.netlify.apprender.com/changePassword", { email: forgotPasswordData.email, password: forgotPasswordData.password, otp: forgotPasswordData.otp })
+        axios.post("https://doctorapp-backend-gilt.vercel.app/changePassword", { email: forgotPasswordData.email, password: forgotPasswordData.password, otp: forgotPasswordData.otp })
             .then((response) => {
                 alert('password changed successfully')
                 navigate('/login');
