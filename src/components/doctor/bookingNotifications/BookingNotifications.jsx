@@ -9,7 +9,7 @@ const BookingNotifications = () => {
     const getRequests = async () => {
         try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getCurrentBookings`, {
+            const response = await axios.get(`https://doctorapp-backend-gilt.vercel.app/getCurrentBookings`, {
                 headers: {
                     'Authorization': `${token}`
                 }
