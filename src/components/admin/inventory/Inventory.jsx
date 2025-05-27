@@ -10,7 +10,7 @@ const Inventory = () => {
   const getInventoryData = async () => {
     try {
       const token = localStorage.getItem("authToken");
-      const response = await axios.get(`https://kritaahospital.netlify.apprender.com/getinventorydata`, {
+      const response = await axios.get(`https://doctorapp-backend-gilt.vercel.app/getinventorydata`, {
         headers: {
           'Authorization': `${token}`
         }
@@ -43,7 +43,7 @@ const Inventory = () => {
     setInventory(updatedInventory);
 
     const token = localStorage.getItem('authToken');
-    await axios.patch(`https://kritaahospital.netlify.apprender.com/updateinventory`, updatedInventory[index], {
+    await axios.patch(`https://doctorapp-backend-gilt.vercel.app/updateinventory`, updatedInventory[index], {
       headers: {
         'Authorization': `${token}`
       }
@@ -69,7 +69,7 @@ const Inventory = () => {
     setInventory(updatedInventory);
 
     const token = localStorage.getItem('authToken');
-    await axios.patch(`https://kritaahospital.netlify.apprender.com/updateinventory`, updatedInventory[index], {
+    await axios.patch(`https://doctorapp-backend-gilt.vercel.app/updateinventory`, updatedInventory[index], {
       headers: {
         'Authorization': `${token}`
       }
@@ -95,7 +95,7 @@ const Inventory = () => {
       setInventory(jsonData);
 
       const token = localStorage.getItem('authToken');
-      await axios.post(`https://kritaahospital.netlify.apprender.com/bulkinventory`, {data:jsonData}, {
+      await axios.post(`https://doctorapp-backend-gilt.vercel.app/bulkinventory`, {data:jsonData}, {
         headers: {
           'Authorization': `${token}`
         }
